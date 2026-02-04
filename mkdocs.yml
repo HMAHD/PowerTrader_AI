@@ -1,0 +1,214 @@
+# PowerTrader AI - Documentation Configuration
+# MkDocs with Material Theme + Dracula Color Scheme
+
+site_name: PowerTrader AI
+site_description: Automated crypto trading powered by AI price prediction
+site_author: HMAHD (Akash Hasendra)
+site_url: https://hmahd.github.io/PowerTrader_AI/
+
+# Repository
+repo_name: HMAHD/PowerTrader_AI
+repo_url: https://github.com/HMAHD/PowerTrader_AI
+edit_uri: edit/main/documentation/
+
+# Copyright
+copyright: Copyright &copy; 2026 PowerTrader AI Contributors
+
+# Configuration
+docs_dir: documentation
+site_dir: site
+
+theme:
+  name: material
+  language: en
+
+  # Dracula Theme Colors
+  palette:
+    # Light mode (optional, can remove if only dark mode desired)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Dark mode (Dracula theme)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  # Dracula Custom Colors (via extra CSS)
+  # Primary: #BD93F9 (Purple)
+  # Accent: #FF79C6 (Pink)
+  # Background: #282A36 (Dark)
+  # Foreground: #F8F8F2 (Light)
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  # Logo and favicon
+  logo: assets/logo-mark.png
+  favicon: assets/icon.ico
+
+  # Features
+  features:
+    - navigation.instant      # Instant loading
+    - navigation.instant.progress  # Progress indicator
+    - navigation.tracking     # URL updates with scroll
+    - navigation.tabs         # Top-level tabs
+    - navigation.tabs.sticky  # Sticky tabs
+    - navigation.sections     # Section headers
+    - navigation.expand       # Expand sections by default
+    - navigation.path         # Breadcrumbs
+    - navigation.indexes      # Section index pages
+    - navigation.top          # Back to top button
+    - navigation.footer       # Footer navigation
+    - toc.follow              # TOC follows scroll
+    - toc.integrate          # TOC integrated into nav
+    - search.suggest          # Search suggestions
+    - search.highlight        # Highlight search results
+    - search.share            # Share search results
+    - header.autohide         # Auto-hide header on scroll
+    - content.code.copy       # Copy code button
+    - content.code.annotate   # Code annotations
+    - content.tabs.link       # Link content tabs
+    - content.tooltips        # Tooltips
+    - announce.dismiss        # Dismissible announcements
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - offline  # Offline support
+
+# Extensions
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Extra CSS (for Dracula theme customization)
+extra_css:
+  - stylesheets/dracula.css
+
+# Extra JavaScript
+extra_js:
+  - javascripts/extra.js
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/HMAHD/PowerTrader_AI
+      name: GitHub Repository
+    - icon: fontawesome/brands/python
+      link: https://www.python.org
+      name: Python
+
+  version:
+    provider: mike
+    default: latest
+
+  analytics:
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve by
+            <a href="https://github.com/HMAHD/PowerTrader_AI/issues/new" target="_blank" rel="noopener">opening an issue</a>.
+
+# Page tree (navigation structure)
+nav:
+  - Home: index.md
+
+  - Getting Started:
+    - getting-started/index.md
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+    - System Requirements: getting-started/requirements.md
+
+  - User Guide:
+    - user-guide/index.md
+    - First Run: user-guide/first-run.md
+    - API Setup: user-guide/api-setup.md
+    - Choosing Coins: user-guide/choosing-coins.md
+    - Training the AI: user-guide/training.md
+    - Starting Trading: user-guide/starting-trading.md
+    - Monitoring: user-guide/monitoring.md
+    - Troubleshooting: user-guide/troubleshooting.md
+
+  - Concepts:
+    - concepts/index.md
+    - How It Works: concepts/how-it-works.md
+    - Trading Strategy: concepts/trading-strategy.md
+    - Neural Levels: concepts/neural-levels.md
+    - Risk Management: concepts/risk-management.md
+
+  - Advanced:
+    - advanced/index.md
+    - Multiple Coins: advanced/multiple-coins.md
+    - Customization: advanced/customization.md
+    - Data Files: advanced/data-files.md
+    - Performance Tuning: advanced/performance-tuning.md
+
+  - Developers:
+    - developers/index.md
+    - Building from Source: developers/building.md
+    - Contributing: developers/contributing.md
+    - Architecture: developers/architecture.md
+    - Testing: developers/testing.md
+
+  - FAQ: faq.md
+  - Changelog: changelog.md
